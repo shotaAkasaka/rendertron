@@ -87,7 +87,7 @@ export class Renderer {
     try {
       // Navigate to page. Wait until there are no oustanding network requests.
       response = await page.goto(
-          requestUrl, {timeout: 10000, waitUntil: 'networkidle0'});
+          requestUrl, { timeout: 10000, waitUntil: 'load' });
     } catch (e) {
       console.error(e);
     }
@@ -161,7 +161,7 @@ export class Renderer {
     try {
       // Navigate to page. Wait until there are no oustanding network requests.
       response =
-          await page.goto(url, {timeout: 10000, waitUntil: 'networkidle0'});
+          await page.goto(url, {timeout: 10000, waitUntil: 'load'});
     } catch (e) {
       console.error(e);
     }
